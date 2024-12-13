@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: Apache-2.0
+
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf

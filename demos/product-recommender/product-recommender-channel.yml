@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: lmos.eclipse/v1
+kind: Channel
+metadata:
+  name: product-recommender
+  labels:
+    tenant: globex
+    channel: web
+    version: 1.0.0
+    subset: stable
+spec:
+  requiredCapabilities:
+    - name: get-productsearch
+      version: ">=0.1.0"
+    - name: get-techspec
+      version: ">=0.1.0"
+    - name: get-reportgenerate
+      version: ">=0.1.0"

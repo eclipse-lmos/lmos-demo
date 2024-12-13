@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: stable-vsvc
+spec:
+  hosts:
+  - lmos-operator.default.svc.cluster.local
+  http:
+  - name: primary  # referenced in canary.trafficRouting.istio.virtualService.routes
+    route:
+    - destination:
+        host: lmos-operator.default.svc.cluster.local
+        port:
+          number: 8080
+      weight: 100
+      headers:
+        request:
+          set:
+            x-subset: "stable"

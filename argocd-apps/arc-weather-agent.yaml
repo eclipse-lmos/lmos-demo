@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "arc-weather-agent"
+  namespace: argocd
+  finalizers: ["resources-finalizer.argocd.argoproj.io"]
+spec:
+  project: lmos-demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Replace=true
+      - PruneLast=true
+      - FailOnSharedResource=true
+      - ApplyOutOfSyncOnly=true
+  source:
+    chart: arc-weather-agent-chart
+    repoURL: ghcr.io/eclipse-lmos
+    targetRevision: 1.0.6
+    helm:
+      values: |-
+        podSecurityContext:
+          fsGroup: 185
+          runAsUser: 185
+          runAsGroup: 185
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+          supplementalGroups:
+            - 185
+
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - "ALL"
+          readOnlyRootFilesystem: true
+          runAsUser: 185
+
+        resources:
+          limits:
+            memory: 1024Mi
+          requests:
+            cpu: 50m
+            memory: 768Mi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lmos-demo

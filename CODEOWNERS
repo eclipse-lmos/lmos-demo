@@ -1,0 +1,6 @@
+# This file helps GitHub doing automatic review requests for new PRs.
+
+# Assign all PRs to the most suitable committer:
+/argocd-apps/ @pschwager
+/demos/product-recommender/ @dharam1291
+*       @robwin @kaikreuzer

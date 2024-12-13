@@ -1,0 +1,42 @@
+{
+  "name": "LMOS Demo",
+  "dockerFile": "Dockerfile",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2.5.1": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "plugins": "zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/zsh-users/zsh-history-substring-search.git  "
+    }
+  },
+  "runArgs": [
+    "--memory=6g",   // Allocate 6 GB of memory to the DevContainer
+    "--cpus=4"        // Allocate 4 CPUs to the DevContainer
+  ],
+  "postCreateCommand": "./init/start_minikube.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  },
+  "forwardPorts": []
+}

@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: lmos.eclipse/v1
+kind: Channel
+metadata:
+  name: acme-web-stable
+  labels:
+    tenant: acme
+    channel: web
+    version: 1.0.0
+    subset: stable
+spec:
+  requiredCapabilities:
+    - name: get-weather-forecast
+      version: ">=0.1.0"
+    - name: get-news
+      version: ">=0.1.0"

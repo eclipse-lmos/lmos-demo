@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+version = 1
+SPDX-PackageName = "lmos-demo"
+SPDX-PackageSupplier = "Deutsche Telekom AG <opensource@telekom.de>"
+SPDX-PackageDownloadLocation = "https://github.com/eclipse-lmos/lmos-demo"
+
+[[annotations]]
+path = [
+    "**/*.env",
+    "argocd-apps/*.yaml",
+    "istio/*.yaml"
+]
+SPDX-FileCopyrightText = "2024 Deutsche Telekom AG"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = ["**/.gitignore", ".gitattributes", "pubspec.lock", "**/README.md", "CODEOWNERS"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
