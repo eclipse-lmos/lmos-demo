@@ -41,7 +41,7 @@ while ! kubectl get crd agents.lmos.eclipse >/dev/null 2>/dev/null; do sleep 1; 
 echo "LMOS agent CRD created."
 
 # Install arc-view chart
-helm upgrade --install arc-view-runtime-web oci://ghcr.io/eclipse-lmos/arc-view-runtime-web-chart --version 0.1.0-SNAPSHOT
+helm upgrade --install arc-view-runtime-web oci://ghcr.io/lmos-ai/arc-view-runtime-web-chart --version 0.1.0
 
 # Wait for pods to be running
 echo "Waiting for pods to be running..."
