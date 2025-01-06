@@ -43,7 +43,7 @@ Run the following commands to install LMOS onto Minikube:
 ./install.sh
 ```
 
-### Step 3: Check the Setup
+### Step 4: Check the Setup
 
 To verify the installation of LMOS, run:
 
@@ -62,7 +62,7 @@ lmos-runtime-59ffdbdc6f-v5jtr          2/2     Running   0          2m21s
 
 The status has to be `2/2 Running` for all three of them.
 
-### Step 4: Access Kiali and Grafana
+### Step 5: Access Kiali and Grafana
 
 To visualize your setup, various ports have been forwarded for LMOS, Kiali, Prometheus and Grafana. You can access these tools at
 
@@ -74,7 +74,7 @@ The LMOS components can be accessed at:
 - Arc View: http://localhost:8080 (Web)
 - LMOS Runtime: http://localhost:8081 (API)
 
-### Step 5: Install a demo
+### Step 6: Install a demo
 
 In the `demos` folder, you can find various demo setups.
 To install a demo, run the corresponding `install.sh` script, e.g. for the `starter` demo:
