@@ -33,7 +33,8 @@ helm upgrade --install lmos-runtime oci://ghcr.io/eclipse-lmos/lmos-runtime-char
  --set openaiApiUrl="$OPENAI_URL" \
  --set openaiApiModel="$OPENAI_MODELNAME" \
  --set agentRegistryUrl=http://lmos-operator.default.svc.cluster.local:8080 \
- --set corsEnabled=true
+ --set corsEnabled=true \
+ --set routerType=LLM
 
 # Wait for CRD to be created before installing agents
 echo "Waiting for LMOS agent CRD to be created..."
