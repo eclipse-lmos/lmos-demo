@@ -1,0 +1,12 @@
+{{- if .Values.config.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dashboard.fullname" . }}-config
+data:
+  config.yml: |-
+{{ (.Files.Get .Values.config.file) | indent 4 }}
+binaryData:
+  logo.png: |-
+{{ (.Files.Get .Values.logo.file) | b64enc | indent 4 }}
+{{- end }}

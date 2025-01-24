@@ -62,19 +62,7 @@ lmos-runtime-59ffdbdc6f-v5jtr          2/2     Running   0          2m21s
 
 The status has to be `2/2 Running` for all three of them.
 
-### Step 5: Access Kiali and Grafana
-
-To visualize your setup, various ports have been forwarded for LMOS, Kiali, Prometheus and Grafana. You can access these tools at
-
-- Kiali: http://localhost:20001
-- Grafana: http://localhost:3000
-- Prometheus: http://localhost:9090
-
-The LMOS components can be accessed at:
-- Arc View: http://localhost:8080 (Web)
-- LMOS Runtime: http://localhost:8081 (API)
-
-### Step 6: Install a demo
+### Step 5: Install a demo
 
 In the `demos` folder, you can find various demo setups.
 To install a demo, run the corresponding `install.sh` script, e.g. for the `starter` demo:
@@ -82,6 +70,19 @@ To install a demo, run the corresponding `install.sh` script, e.g. for the `star
 ```shell
 ./demos/starter/install.sh
 ```
+
+### Step 6: Access the demo
+
+To access the demo, ports to the installed services and agents have been forwarded from the Minikube cluster and 
+should be accessible from your browser. A dashboard provides a simple entry point to the different services and can be 
+accessed as follows:
+
+* LMOS Demo dashboard: http://localhost:8082
+
+On the dashboard, you find links to the Arc View (a graphical user interface to interact with the 
+installed agents), as well as links to some tools (Prometheus and Grafana for monitoring, Kiali for inspecting the  
+Istio service mesh). In case you are interested in the GraphQL API of the installed agents, the dashboard also provides
+links to interfaces for interacting with these APIs.
 
 ## Using ArgoCD for deployment
 

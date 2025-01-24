@@ -1,0 +1,86 @@
+title: "LMOS Demo"
+subtitle: "Dashboard"
+logo: "assets/logo.png"
+
+header: true
+footer: '<p>LMOS Demo</p>'
+
+columns: "3" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: false
+
+# Set the default layout and color scheme
+defaults:
+  layout: columns # Either 'columns', or 'list'
+  colorTheme: auto # One of 'auto', 'light', or 'dark'
+
+# Optional theming
+theme: default # 'default' or one of the themes available in 'src/assets/themes'.
+
+message:
+  style: "is-success"
+  title: "Your LMOS demo is running"
+  icon: "fa fa-fire"
+  content: "Everything is set up to start exploring LMOS and ARC"
+
+links:
+  - name: "Eclipse LMOS"
+    icon: "fa fa-house"
+    url: "https://eclipse.dev/lmos/"
+    target: "_blank"
+  - name: "LMOS on github"
+    icon: "fab fa-github"
+    url: "https://github.com/eclipse-lmos"
+    target: "_blank"
+  - name: "Contribute"
+    icon: "fas fa-hand-holding-heart"
+    url: "https://eclipse.dev/lmos/contribute"
+    target: "_blank"
+
+services:
+  - name: "Agents"
+    icon: "fas fa-user-secret"
+    items:
+      - name: "Arc Web View"
+        icon: "fas fa-comments"
+        subtitle: "Chat with the agents"
+        url: "http://localhost:8080"
+        target: "_blank"
+      - name: "Weather Agent (from starter demo)"
+        icon: "fas fa-cloud-sun-rain"
+        subtitle: "GraphQL interface"
+        url: "http://localhost:8100/graphiql"
+        target: "_blank"
+      - name: "News Agent (from starter demo)"
+        icon: "fas fa-newspaper"
+        subtitle: "GraphQL interface"
+        url: "http://localhost:8101/graphiql"
+        target: "_blank"
+  - name: "Platform Services"
+    icon: "fas fa-heartbeat"
+    items:
+      - name: "Prometheus"
+        icon: "fas fa-database"
+        url: "http://localhost:9090"
+        target: "_blank"
+        subtitle: "Time-Series DB"
+      - name: "Grafana"
+        icon: "fas fa-gauge"
+        url: "http://localhost:3000"
+        target: "_blank"
+        subtitle: "Monitoring"
+      - name: "Kiali"
+        icon: "fas fa-hexagon-nodes"
+        url: "http://localhost:20001"
+        target: "_blank"
+        subtitle: "Istio Mesh"
+  - name: "Documentation"
+    icon: "fas fa-book-open-reader"
+    items:
+      - name: "LMOS Documentation"
+        url: "https://eclipse.dev/lmos/docs/introduction"
+        icon: "fas fa-book"
+        target: "_blank"
+      - name: "ARC Documentation"
+        url: "https://eclipse.dev/lmos/arc"
+        icon: "fas fa-book"
+        target: "_blank"
