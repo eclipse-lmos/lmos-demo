@@ -44,6 +44,9 @@ echo "LMOS agent CRD created."
 # Install arc-view chart
 helm upgrade --install arc-view-runtime-web oci://ghcr.io/lmos-ai/arc-view-runtime-web-chart --version 0.1.0
 
+# Install dashboard for the lmos-demo
+helm upgrade --install dashboard-lmos-demo ./dashboard/helm-chart
+
 # Wait for pods to be running
 echo "Waiting for pods to be running..."
 while ! kubectl get pods -n istio-system | grep kiali | grep -q Running; do sleep 1; done
@@ -51,6 +54,7 @@ while ! kubectl get pods -n istio-system | grep grafana | grep -q Running; do sl
 while ! kubectl get pods -n istio-system | grep prometheus | grep -q Running; do sleep 1; done
 while ! kubectl get pods | grep lmos-runtime | grep -q Running; do sleep 1; done
 while ! kubectl get pods | grep arc-view-runtime-web | grep -q Running; do sleep 1; done
+while ! kubectl get pods | grep dashboard-lmos-demo | grep -q Running; do sleep 1; done
 
 # Set up port forwarding
 echo "Setting up port forwarding..."
@@ -59,6 +63,7 @@ nohup kubectl -n istio-system port-forward svc/grafana 3000:3000 >/dev/null 2>&1
 nohup kubectl -n istio-system port-forward svc/prometheus 9090:9090 >/dev/null 2>&1 &
 nohup kubectl port-forward svc/lmos-runtime 8081:8081 >/dev/null 2>&1 &
 nohup kubectl port-forward svc/arc-view-runtime-web-service 8080:80 >/dev/null 2>&1 &
+nohup kubectl port-forward svc/dashboard-lmos-demo 8082:8080 >/dev/null 2>&1 &
 
 # Route 100% of traffic to stable channels
 kubectl apply -f istio/vsvc-stable.yaml

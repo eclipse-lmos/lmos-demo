@@ -22,6 +22,12 @@ kubectl create secret generic openai-secrets \
 helm upgrade --install weather-agent oci://ghcr.io/eclipse-lmos/weather-agent-chart --version 0.1.0-SNAPSHOT
 helm upgrade --install news-agent oci://ghcr.io/eclipse-lmos/news-agent-chart --version 0.1.0-SNAPSHOT
 
+while ! kubectl get pods | grep weather-agent | grep -q Running; do sleep 1; done
+while ! kubectl get pods | grep news-agent | grep -q Running; do sleep 1; done
+
+nohup kubectl port-forward svc/weather-agent 8100:8080 >/dev/null 2>&1 &
+nohup kubectl port-forward svc/news-agent 8101:8080 >/dev/null 2>&1 &
+
 echo "Setting up channel..."
 # Stable Channel – Includes the weather agent and news agent
 kubectl apply -f "$SCRIPT_DIR/acme-web-stable-channel.yml"
