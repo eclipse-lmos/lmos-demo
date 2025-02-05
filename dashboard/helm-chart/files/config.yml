@@ -27,7 +27,7 @@ links:
     icon: "fa fa-house"
     url: "https://eclipse.dev/lmos/"
     target: "_blank"
-  - name: "LMOS on github"
+  - name: "LMOS on GitHub"
     icon: "fab fa-github"
     url: "https://github.com/eclipse-lmos"
     target: "_blank"
