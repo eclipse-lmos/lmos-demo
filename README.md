@@ -1,4 +1,8 @@
-# LMOS demo
+[![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![REUSE Compliance Check](https://github.com/eclipse-lmos/lmos-demo/actions/workflows/reuse.yaml/badge.svg)](https://github.com/eclipse-lmos/lmos-demo/actions/workflows/reuse.yaml)
+
+# LMOS Demo
 
 A LMOS demo using GitHub Codespaces / Development Containers.
 
