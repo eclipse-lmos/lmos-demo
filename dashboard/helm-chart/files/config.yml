@@ -47,7 +47,7 @@ services:
       - name: "Arc Web View"
         icon: "fas fa-comments"
         subtitle: "Chat with the agents"
-        url: "http://localhost:8080"
+        url: "https://eclipse.dev/lmos/chat/index.html?tenantId=acme&channelId=web&agentUrl=http://localhost:8081#/chat"
         target: "_blank"
       - name: "Weather Agent (from starter demo)"
         icon: "fas fa-cloud-sun-rain"
