@@ -34,9 +34,10 @@ This OpenAPI access is used by the `lmos-runtime` and the agents.
 
 ```
 OPENAI_APIKEY="<your-openai-api-key>"
-OPENAI_CLIENTNAME="azure"
+OPENAI_CLIENTNAME="openai"
 OPENAI_MODELNAME="gpt-4o-mini"
 OPENAI_URL="https://api.openai.com"
+OPENAI_PROVIDER="openai"
 ```
 
 ### Step 3: Install LMOS
@@ -59,7 +60,7 @@ Output:
 
 ```
 NAME                                   READY   STATUS    RESTARTS   AGE
-arc-view-runtime-web-db8d87c59-54k7b   2/2     Running   0          87s
+arc-view-web-db8d87c59-54k7b           2/2     Running   0          87s
 lmos-operator-64bfb9b569-4l9qv         2/2     Running   0          2m22s
 lmos-runtime-59ffdbdc6f-v5jtr          2/2     Running   0          2m21s
 ```
