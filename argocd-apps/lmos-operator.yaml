@@ -18,7 +18,7 @@ spec:
   source:
     chart: lmos-operator-chart
     repoURL: ghcr.io/eclipse-lmos
-    targetRevision: 0.1.0
+    targetRevision: 0.4.0
     helm:
       values: |-
         podSecurityContext:

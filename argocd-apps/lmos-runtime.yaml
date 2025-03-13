@@ -18,7 +18,7 @@ spec:
   source:
     chart: lmos-runtime-chart
     repoURL: ghcr.io/eclipse-lmos
-    targetRevision: 0.6.0
+    targetRevision: 0.2.0
     helm:
       values: |-
         podSecurityContext:

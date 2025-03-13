@@ -13,9 +13,9 @@ source "$SCRIPT_DIR/.env"
 # Update openai-secrets through kubectl by adding the .env variables to the existing secrets
 kubectl create secret generic openai-secrets --from-env-file="$SCRIPT_DIR/.env" --dry-run=client -o yaml | kubectl apply -f -
 
-helm upgrade --install productsearch-agent oci://ghcr.io/eclipse-lmos/productsearch-agent-chart --version 0.1.0-SNAPSHOT
-helm upgrade --install techspec-agent oci://ghcr.io/eclipse-lmos/techspec-agent-chart --version 0.1.0-SNAPSHOT
-helm upgrade --install --wait reportgenerate-agent oci://ghcr.io/eclipse-lmos/reportgenerate-agent-chart --version 0.1.0-SNAPSHOT
+helm upgrade --install productsearch-agent oci://ghcr.io/eclipse-lmos/productsearch-agent-chart --version 0.1.0
+helm upgrade --install techspec-agent oci://ghcr.io/eclipse-lmos/techspec-agent-chart --version 0.1.0
+helm upgrade --install --wait reportgenerate-agent oci://ghcr.io/eclipse-lmos/reportgenerate-agent-chart --version 0.1.0
 
 # Forward the port
 nohup kubectl port-forward svc/reportgenerate-agent 8082:8080 >/dev/null 2>&1 &

@@ -19,8 +19,8 @@ kubectl create secret generic openai-secrets \
     --from-literal=ARC_AI_CLIENTS_0_ID="OPENAI" \
     --from-literal=ARC_AI_CLIENTS_0_CLIENT="$OPENAI_CLIENTNAME"
 
-helm upgrade --install weather-agent oci://ghcr.io/eclipse-lmos/weather-agent-chart --version 0.1.0-SNAPSHOT
-helm upgrade --install news-agent oci://ghcr.io/eclipse-lmos/news-agent-chart --version 0.1.0-SNAPSHOT
+helm upgrade --install weather-agent oci://ghcr.io/eclipse-lmos/weather-agent-chart --version 0.1.0
+helm upgrade --install news-agent oci://ghcr.io/eclipse-lmos/news-agent-chart --version 0.1.0
 
 while ! kubectl get pods | grep weather-agent | grep -q Running; do sleep 1; done
 while ! kubectl get pods | grep news-agent | grep -q Running; do sleep 1; done
