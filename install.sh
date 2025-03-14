@@ -43,7 +43,7 @@ while ! kubectl get crd agents.lmos.eclipse >/dev/null 2>/dev/null; do sleep 1; 
 echo "LMOS agent CRD created."
 
 # Install arc-view chart
-helm upgrade --install arc-view-web oci://ghcr.io/eclipse-lmos/arc-view-web-chart --version 0.1.0-SNAPSHOT
+helm upgrade --install arc-view-web oci://ghcr.io/eclipse-lmos/arc-view-web-chart --version 0.1.0
 
 # Install dashboard for the lmos-demo
 helm upgrade --install dashboard-lmos-demo ./dashboard/helm-chart
